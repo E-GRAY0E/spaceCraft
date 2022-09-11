@@ -1,0 +1,183 @@
+body {
+  height: 100vh;
+}
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#craft-int{
+  height: 100%;
+  width: 100%; 
+  background: lightgray;
+  border: 5px solid black;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+#display{
+  background: slategray;
+  display: grid;
+  height: 95%;
+  width: 75%;
+  border: 5px solid black;
+  border-radius: 5px;
+  margin: auto;
+  grid-column-template:auto auto auto auto;
+  column-gap: 15px;
+  grid-row-template: auto auto auto auto;
+  row-gap: 15px;
+  box-shadow: inset 0 2px 1px -1px rgba(255, 255, 255, .2), inset
+   0 -2px 1px -1px rgba(0, 0, 0, .2), 0 12px 12px rgba(0,0,0,.5);
+  overflow: scroll;
+  padding: 10px; 
+}
+img{
+  width: 350px;
+  height: 250px;
+  margin: auto;
+  border: 2px solid lightgrey;
+  border-radius: 15px;
+  box-shadow: inset 0 2px 1px -1px rgba(255, 255, 255, .2), inset
+   0 -2px 1px -1px rgba(0, 0, 0, .2), 0 12px 12px rgba(0,0,0,.5);
+
+}
+#img1{grid-column-start:1; grid-column-end:2;}
+#img2{grid-column-start:2; grid-column-end:3;}
+#img3{grid-column-start:1; grid-column-end:2;}
+#img4{grid-column-start:2; grid-column-end:3;}
+#keypad{
+  display: grid;
+  column-gap: .2em;
+  row-gap: .2em;
+  grid-template-columns: auto auto auto auto auto auto auto;
+  grid-row-columns: auto auto auto auto auto auto auto;
+  border: solid lightgray 2px;
+  border-radius: 15px;
+  padding-left: .2em;  
+  padding-right: .2em;  
+  padding-top: .2em; 
+  margin: auto; 
+  grid-column-start:1;
+  grid-column-end:2;
+  width: 350px;
+  height: 250px;
+  background: #444;
+  box-shadow: inset 0 2px 1px -1px rgba(255, 255, 255, .2), inset
+   0 -2px 1px -1px rgba(0, 0, 0, .2), 0 12px 12px rgba(0,0,0,.5);
+
+}
+#screen{
+  width: 100%;
+  height: 100%;
+  background: black;
+  grid-column-start: 1;
+  grid-column-end: 8;
+  grid-row-start: 1;
+  grid-row-end: 12;
+  border-radius: 15px;
+  font-family: monospace;
+  font-size: 1.5em;
+  word-break: break-all;
+  overflow: hidden;
+  padding: .5em;
+  color: lightgreen;
+}
+.ltr{
+ border: .5px solid lightgrey;
+ text-align: center;
+ box-shadow: inset 1px 1px 1px 1px white;
+ color: white;
+ background: darkblue;
+ font-family: monospace;
+ padding-top: .5em;
+ font-size: 1.5em;
+ border-radius: 15px;
+  box-shadow: inset 0 2px 1px -1px rgba(255, 255, 255, .2), inset
+   0 -2px 1px -1px rgba(0, 0, 0, .2), 0 12px 12px rgba(0,0,0,.5);
+
+}
+.ltr:hover{
+ border: .5px solid lightgrey;
+ text-align: center;
+ color: white;
+ box-shadow: inset 1px 1px 1px 1px white;
+ background: lightblue;
+ font-family: monospace;
+ padding-top: .5em;
+ font-size: 1.5em;
+  box-shadow: inset 0 2px 1px -1px rgba(255, 255, 255, .2), inset
+   0 -2px 1px -1px rgba(0, 0, 0, .2), 0 12px 12px rgba(0,0,0,.5);
+
+}
+#contain-top, #contain-bottom{
+  display: flex;
+  justify-content: center;
+}
+#top-btn, #left-btn, #down-btn, #right-btn, #blaster, #shield{
+  text-align: center;
+  font-family: monospace;
+  font-size: 2em;
+  border: 1px solid black;
+  width: 5em;
+  background: radial-gradient(black, darkblue);
+  color: lightblue;
+  display: none;
+  margin: .25em;
+  box-shadow: inset 0 2px 1px -1px rgba(255, 255, 255, .2), inset
+   0 -2px 1px -1px rgba(0, 0, 0, .2), 0 12px 12px rgba(0,0,0,.5);
+  border-radius: 3px;
+}
+#top-btn:hover, #left-btn:hover, #down-btn:hover, #right-btn:hover, #blaster:hover, #shield:hover{
+  text-align: center;
+  font-family: monospace;
+  font-size: 2em;
+  border: 1px solid black; 
+  width: 5em;
+  background: radial-gradient(darkblue, black);
+  color: orange;
+  display: none;
+  margin: .25em;
+  box-shadow: inset 0 2px 1px -1px rgba(255, 255, 255, .2), inset
+   0 -2px 1px -1px rgba(0, 0, 0, .2), 0 12px 12px rgba(0,0,0,.5);
+  border-radius: 3px;
+}
+
+
+#canvas{
+  border: 2px solid black;
+  display: none;
+}
+
+button {
+  width: 5em;
+  grid-column-start: 2;
+  height: 5em;
+  grid-row-start: 3;
+  margin: auto;
+  background-image: linear-gradient(#555, #373738);
+  box-shadow: inset 0 2px 1px -1px rgba(255, 255, 255, .2), inset
+    0 -2px 1px -1px rgba(0, 0, 0, .2), 0 12px 12px rgba(0,0,0,.5);
+  font-family: monospace;
+}
+button:hover {
+  width: 5em;
+  grid-column-start: 2;
+  height: 5em;
+  grid-row-start: 3;
+  margin: auto;
+  background-image: linear-gradient(#555, #373738);
+  box-shadow: inset 0 2px 1px -1px rgba(255, 255, 255, .2), inset
+   0 -2px 1px -1px rgba(0, 0, 0, .2), 0 12px 12px rgba(0,0,0,.5);
+  border: 2px solid #666;
+  font-family: monospace;
+}
+#start{
+  margin-bottom: 150px;
+}
+
+#abort{
+  margin-bottom: 50px;
+}

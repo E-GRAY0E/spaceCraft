@@ -1,0 +1,81 @@
+/*
+  
+  spaceCraft
+  developed by: E_GRAY0E
+  special dedication to M|E|G!
+ 
+*/
+
+const craftScreen = document.getElementById("screen");
+const keypad = document.getElementById("keypad");
+const uprCs = document.getElementById("^");
+const canvas = document.getElementById("canvas");
+const left-btn = document.getElementById("left-btn");
+
+//lft off at naming game btns to hange display to vis.
+let shift = false;
+let playerName = '';
+
+const getLetter = e => {
+  const letter = e.target.id;
+  let currentScreen = craftScreen.textContent;
+  if(letter != "screen" && letter != "keypad" && letter != "<" && letter != "^"){ 
+     shift == false ? craftScreen.textContent = currentScreen + letter :
+    craftScreen.textContent = currentScreen + letter.toUpperCase(); 
+  }else if(letter == "<"){
+    let rmvLast = currentScreen.toString().slice(0, -1);
+    craftScreen.textContent = rmvLast;
+  }else if(letter == "^" && shift == false){
+    uprCs.style.backgroundColor = "purple";
+    shift = true;
+  }else if(letter == "^" && shift == true){
+    uprCs.style.backgroundColor = "darkblue";
+    shift = false;
+    }
+};
+
+function startGame(){
+  playerName = craftScreen.textContent;
+  console.log(playerName);
+  let display = document.getElementById("display");
+  while(display.firstChild){
+    display.removeChild(display.firstChild)};
+  canvas.style.display = visible;
+};
+
+
+function start(){
+  setTimeout(()=>{craftScreen.textContent = ""}, 500);
+  setTimeout(()=>{craftScreen.textContent = "Initiating Start-Up..."}, 1000);
+  setTimeout(()=>{craftScreen.textContent = "10..."}, 6000); 
+  setTimeout(()=>{craftScreen.textContent = "9..."}, 7000); 
+  setTimeout(()=>{craftScreen.textContent = "8..."}, 8000); 
+  setTimeout(()=>{craftScreen.textContent = "7..."}, 9000); 
+  setTimeout(()=>{craftScreen.textContent = "6..."}, 10000); 
+  setTimeout(()=>{craftScreen.textContent = "5..."}, 11000); 
+  setTimeout(()=>{craftScreen.textContent = "4..."}, 12000); 
+  setTimeout(()=>{craftScreen.textContent = "3..."}, 13000); 
+  setTimeout(()=>{craftScreen.textContent = "2..."}, 14000); 
+  setTimeout(()=>{craftScreen.textContent = "1..."}, 15000); 
+  setTimeout(()=>{craftScreen.textContent = "Enter your name, and press enter"}, 16000); 
+  setTimeout(()=>{craftScreen.textContent = ""}, 18000);
+  document.addEventListener('keypress', function(e){
+  if(e.key === "Enter"){ 
+  startGame();
+  }
+ });
+};
+
+function abort(){
+console.log('does this work?');
+};
+
+
+
+
+
+
+keypad.addEventListener('click', getLetter);
+
+
+
