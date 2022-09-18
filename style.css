@@ -7,6 +7,24 @@ body {
     box-sizing: border-box;
 }
 
+@media only screen and (max-width: 600px) {
+ img{
+    width: 30%;
+    height: 33%;
+  }
+ #keypad{
+   width: 30%;
+   height: 33%;
+ }
+ #start{
+  margin-bottom: 10%;
+ }
+
+ #abort{
+  margin-bottom: 5%;
+ }
+
+}
 
 #craft-int{
   height: 100%;
@@ -116,7 +134,7 @@ img{
   display: flex;
   justify-content: center;
 }
-#top-btn, #left-btn, #down-btn, #right-btn, #blaster, #shield{
+#top-btn, #left-btn, #down-btn, #right-btn, #changeship, #wormhole{
   text-align: center;
   font-family: monospace;
   font-size: 2em;
@@ -130,7 +148,7 @@ img{
    0 -2px 1px -1px rgba(0, 0, 0, .2), 0 12px 12px rgba(0,0,0,.5);
   border-radius: 3px;
 }
-#top-btn:hover, #left-btn:hover, #down-btn:hover, #right-btn:hover, #blaster:hover, #shield:hover{
+#top-btn:hover, #left-btn:hover, #down-btn:hover, #right-btn:hover, #changeship:hover, #wormhole:hover{
   text-align: center;
   font-family: monospace;
   font-size: 2em;
@@ -180,4 +198,12 @@ button:hover {
 
 #abort{
   margin-bottom: 50px;
+}
+
+h1{
+ display: none;
+ color: lightBlue;
+ opacity: 50%;
+ text-align: center;
+ font-family: monospace;
 }
